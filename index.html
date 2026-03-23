@@ -565,13 +565,20 @@
       50% { opacity: 1; transform: scaleY(1.2); }
     }
 
-    /* Intersection observer fade-ins */
+    /* Intersection observer fade-ins - visible by default, animated as bonus */
     .reveal {
-      opacity: 0;
-      transform: translateY(24px);
+      opacity: 1;
+      transform: translateY(0);
       transition: opacity 0.65s ease, transform 0.65s ease;
     }
-    .reveal.visible { opacity: 1; transform: translateY(0); }
+    .reveal.animate-ready {
+      opacity: 0;
+      transform: translateY(24px);
+    }
+    .reveal.animate-ready.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
 
     /* ─── Responsive ─────────────────────────────────────────────── */
     @media (max-width: 900px) {
@@ -1053,18 +1060,22 @@
     <span>© 2025 · Surendrapal Singh Rathod</span>
   </footer>
 
-  <!-- ── JS: Intersection Observer for scroll reveals ─────────────── -->
+  <!-- ── JS ─────────────────────────────────────────────────────── -->
   <script>
-    const reveals = document.querySelectorAll('.reveal');
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-          observer.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.12 });
-    reveals.forEach(el => observer.observe(el));
+    // Animate on scroll - content always visible, animation is bonus
+    if ('IntersectionObserver' in window) {
+      const reveals = document.querySelectorAll('.reveal');
+      reveals.forEach(el => el.classList.add('animate-ready'));
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.08 });
+      reveals.forEach(el => observer.observe(el));
+    }
 
     // Active nav link highlight on scroll
     const sections = document.querySelectorAll('section[id]');
@@ -1075,4 +1086,9 @@
         if (window.scrollY >= sec.offsetTop - 120) current = sec.getAttribute('id');
       });
       navLinks.forEach(link => {
-     
+        link.style.color = link.getAttribute('href') === '#' + current ? 'var(--amber)' : '';
+      });
+    });
+  </script>
+</body>
+</html>
