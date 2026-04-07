@@ -943,7 +943,7 @@
               <span class="tag">HTML/CSS</span>
               <span class="tag">GitHub Pages</span>
             </div>
-            <a href="#" class="proj-link">View Project →</a>
+            <a href="https://f1-predictor-cac6a.web.app/dashboard" target="_blank" class="proj-link">Play the Game →</a>
           </div>
         </div>
 
@@ -960,7 +960,7 @@
               <span class="tag">HTML/CSS</span>
               <span class="tag">JavaScript</span>
             </div>
-            <a href="#" class="proj-link">Visit Site →</a>
+            <a href="https://inaayat.art/" target="_blank" class="proj-link">Visit Site →</a>
           </div>
         </div>
 
@@ -995,7 +995,7 @@
               <span class="tag">Kanban</span>
               <span class="tag">MS Project</span>
             </div>
-            <a href="#" class="proj-link">View Details →</a>
+            <span style="font-family:'DM Mono',monospace;font-size:0.72rem;color:var(--text-dim);letter-spacing:0.08em;">Ohio State · 2019</span>
           </div>
         </div>
 
@@ -1013,7 +1013,7 @@
               <span class="tag">CPLEX</span>
               <span class="tag">Time-Series</span>
             </div>
-            <a href="#" class="proj-link">View Details →</a>
+            <span style="font-family:'DM Mono',monospace;font-size:0.72rem;color:var(--text-dim);letter-spacing:0.08em;">Ohio State · 2019</span>
           </div>
         </div>
       </div>
@@ -1065,10 +1065,10 @@
 
       <div class="speaking-grid">
         <div class="speak-card target reveal">
-          <div class="speak-year">TARGET · 2025</div>
-          <div class="speak-event">ASUG Webinar / Virtual Event</div>
-          <div class="speak-topic">Practical Lessons from SAP S/4HANA in Food Manufacturing</div>
-          <span class="status-badge status-target">In Progress</span>
+          <div class="speak-year">PRIMARY TARGET · 2026</div>
+          <div class="speak-event">SAP Insider Conference</div>
+          <div class="speak-topic">Practical Lessons from SAP S/4HANA Implementation in Food &amp; Dairy Manufacturing</div>
+          <span class="status-badge status-target">Abstract in Preparation</span>
         </div>
         <div class="speak-card target reveal" style="transition-delay:0.1s">
           <div class="speak-year">TARGET · 2026</div>
@@ -1077,9 +1077,9 @@
           <span class="status-badge status-planned">Planned</span>
         </div>
         <div class="speak-card target reveal" style="transition-delay:0.2s">
-          <div class="speak-year">TARGET · 2026</div>
+          <div class="speak-year">TARGET · 2026–2027</div>
           <div class="speak-event">IISE Annual Conference</div>
-          <div class="speak-topic">Industrial Engineering Meets Enterprise ERP</div>
+          <div class="speak-topic">Industrial Engineering Meets Enterprise ERP: A Practitioner&#39;s Bridge</div>
           <span class="status-badge status-planned">Planned</span>
         </div>
       </div>
@@ -1111,7 +1111,7 @@
             <svg viewBox="0 0 24 24"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm0 2c5.523 0 10 4.477 10 10s-4.477 10-10 10S2 17.523 2 12 6.477 2 12 2zm0 3a7 7 0 1 0 0 14A7 7 0 0 0 12 5zm0 2a5 5 0 1 1 0 10A5 5 0 0 1 12 7z"/></svg>
             SAP Community
           </a>
-          <a href="mailto:rathoresurendra80@gmail.com" class="contact-link">
+          <a href="/cdn-cgi/l/email-protection#50223124383f2235232522353e342231686010373d31393c7e333f3d" class="contact-link">
             <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
             Email Me
           </a>
@@ -1152,6 +1152,7 @@
       sections.forEach(sec => {
         if (window.scrollY >= sec.offsetTop - 120) current = sec.getAttribute('id');
       });
+      navLinks
       navLinks.forEach(link => {
         link.style.color = link.getAttribute('href') === '#' + current ? 'var(--amber)' : '';
       });
